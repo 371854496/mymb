@@ -1,0 +1,24 @@
+/* components/mySwiper/component.wxss */
+.myswiper-info{
+  position: relative;
+}
+.myswiper-info>.myswiper-icons{
+  display: flex;
+  position: absolute;
+  bottom: 20rpx;
+  left: 47%;
+}
+.myswiper-info>.myswiper-icons>view{
+  height: 10rpx;
+  width:10rpx;
+  background: #ccc;
+  border-radius: 50%;
+  opacity: 100%;
+} 
+.myswiper-info>.myswiper-icons>.myswiper-icon-active{
+  width: 20rpx;
+  border-radius: 10rpx;
+}
+.myswiper-info>.myswiper-icons>view+view{
+  margin-left:6rpx 
+}

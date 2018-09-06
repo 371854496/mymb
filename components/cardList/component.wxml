@@ -1,0 +1,23 @@
+<!--components/cardList/component.wxml-->
+<wxs module="filter" src="../../filter/filter.wxs"/>
+<view class='list'>
+    <block wx:for="{{cardList}}" wx:key="index">
+        <view class='list-item' catchtap='chooseCard' data-item='{{item}}'>
+            <!--item.couponcolor  -->
+            <view class="list-item-left" style="background:{{activeBgColor}};">
+                <view>{{item.brandname}}</view>
+                <view>
+                    <text>￥</text>
+                    <text>{{item.cutprice}}</text>
+                </view>
+                <view>{{cardStatus}}</view>
+                <image src="{{cardBorder}}"></image>
+            </view>
+            <view class='list-item-right'>
+                <view>{{item.couponname}}</view>
+                <view>{{item.remark}}</view>
+                <view>{{filter.isCardTime(item.createtime,item.expiretime)}}</view>
+            </view>
+        </view>
+    </block>
+</view>

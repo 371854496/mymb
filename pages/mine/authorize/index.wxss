@@ -1,0 +1,32 @@
+/* pages/mine/authorize/index.wxss */
+.authorize{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.authorize>image{
+    width: 200rpx;
+    height: 200rpx;
+    margin-bottom: 60rpx;
+    margin-top: 100rpx;
+}
+.authorize-info{
+    width: 630rpx;
+    padding-top: 80rpx;
+}
+.authorize-info>view:first-of-type{
+    font-size: 30rpx;
+    color:#333;
+    padding-bottom: 60rpx;
+}
+.authorize-info>view:nth-of-type(2){
+    font-size: 28rpx;
+    color:#666;
+    padding-bottom: 100rpx;
+}
+.authorize-info>button{
+    width: 100%;
+    line-height: 88rpx;
+    border-radius: 40rpx;
+    font-size: 28rpx;
+}

@@ -1,0 +1,30 @@
+<!--pages/mine/bill/index.wxml-->
+<wxs module="filter" src="../../../filter/filter.wxs" />
+<view class='bill'>
+    <view class="bill-header">
+        <picker bindchange="bindPickerChange" fields="month" mode="date" end="{{billDateEnd}}" class='bill-header-date' value="{{billDateEnd}}">
+            <view class="bill-header-date-info">
+                <text>{{filter.formatMonth(billDate)}}</text>
+                <image src="{{jumpIcon}}"></image>
+            </view>
+        </picker>
+        <view class='bill-header-price' wx:if="{{billInfo.amounts}}">支出￥{{billInfo.amounts}}</view>
+    </view>
+    <view class="bill-content {{isIpx?'fix-iphonex-view':''}}">
+        <block wx:for="{{billInfo.merchantOrder}}" wx:key="index">
+            <view class='bill-content-info'>
+                <image src="{{item.avatarurl}}"></image>
+                <view>
+                    <view>
+                        <view>{{item.nickname}}</view>
+                        <view>{{item.updatetime}}</view>
+                    </view>
+                    <view>-{{item.amount}}</view>
+                </view>
+            </view>
+        </block>
+    </view>
+    <emty wx:if="{{billInfo.merchantOrder.length==0}}" emtyText="暂无消费记录"></emty>
+</view>
+<view class="{{isIpx?'fix-iphonex-button':''}}">
+</view>

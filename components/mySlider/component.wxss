@@ -1,0 +1,79 @@
+/* components/mySlider/component.wxss */
+
+.myslider {
+    position: relative;
+    height: 100rpx;
+    font-size: 28rpx;
+}
+
+.myslider>view {
+    display: flex;
+    margin-top:52rpx;
+    line-height:28rpx;
+}
+
+.myslider-left {
+    position: relative;
+}
+
+.myslider-left-top-text {
+    position: absolute;
+    top: -52rpx;
+    left: 0;
+}
+
+.myslider-left-bottom-text {
+    position: absolute;
+    left: 0;
+    width:60rpx;
+}
+
+.myslider-active {
+    position: absolute;
+    border-radius: 50%;
+    z-index: 1000;
+    opacity: 0.4;
+}
+
+.myslider-active__in {
+    position: absolute;
+    border-radius: 50%;
+    z-index: 1000;
+}
+.myslider-right {
+    position: relative;
+}
+.myslider-active-top-text {
+    width: 100rpx;
+    position: absolute;
+    top: -52rpx;
+    left: -50rpx;
+    text-align: center;
+}
+.myslider-active-bottom-text {
+    width: 100rpx;
+    position: absolute;
+    left: -50rpx;
+    text-align: center;
+}
+.myslider-right-top-text {
+    position: absolute;
+    top: -52rpx;
+    right: 0;
+    width: 60rpx;
+}
+
+.myslider-right-bottom-text {
+    position: absolute;
+    right: 0;
+    width: 60rpx;
+}
+.top-color{
+    color:#222;
+}
+.bottom-color{
+    color:#222;
+}
+.font-num{
+    margin-left: 0;
+}

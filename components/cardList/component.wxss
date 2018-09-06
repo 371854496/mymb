@@ -1,0 +1,58 @@
+/* components/cardList/component.wxss */
+.list{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 24rpx;
+    color:#222;
+}
+.list-item{
+    width: 100%;
+    display: flex;
+    margin-bottom: 20rpx;
+    box-shadow: 0 6rpx 8rpx 0 
+		#f3f3f3;
+}
+.list-item-left{
+    width: 220rpx;
+    height: 180rpx;
+    padding: 20rpx;
+    color:#fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+}
+.list-item-left>view:first-of-type{
+    font-size: 26rpx; 
+}
+.list-item-left>view:nth-of-type(2)>text:first-of-type{
+    font-size: 40rpx;
+}
+.list-item-left>view:nth-of-type(2)>text:last-of-type{
+    font-size: 60rpx;
+}
+.list-item-left>image{
+    width: 10rpx;
+    height: 195rpx;
+    position: absolute;
+    right: 0;
+    top: 12rpx;
+}
+.list-item-right{
+    width: calc(100% - 220rpx);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 26rpx;
+    background: #fff;
+}
+.list-item-right>view:first-of-type{
+    font-size: 36rpx;
+}
+.list-item-right>view:last-of-type{
+    color:#c2c2c4;
+    font-size: 24rpx;
+}

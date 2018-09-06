@@ -1,0 +1,6 @@
+{
+    "usingComponents":{
+        "shoplist":"/components/shopList/component",
+        "back-home": "/components/backHome/component"
+    }
+}

@@ -1,0 +1,73 @@
+<!--pages/mine/index.wxml-->
+<view class='mine'>
+    <view class='mine-top'>
+        <view class='userinfo'>
+            <image src="{{userInfo.avatarUrl}}" class='userinfo-image'></image>
+            <view class='username'>{{userInfo.nickName}}</view>
+        </view>
+    </view>
+    <view class='mine-tabs'>
+        <view catchtap='bindOnlineBuy'>
+            <image src="{{onlineBuyIcon}}"></image>
+            <text>在线买单</text>
+        </view>
+        <!-- <view catchtap='bindMember'>
+            <image src="{{memberIcon}}"></image>
+            <text>会员卡</text>
+        </view> -->
+        <view catchtap='bindCard'>
+            <image src="{{cardIcon}}"></image>
+            <text>优惠券</text>
+        </view>
+    </view>
+    <view class='mine-columns'>
+        <view catchtap='bindOrder' class='mine-columns-item'>
+            <view>
+                <image src="{{reserveIcon}}"></image>
+                <text>我的订单</text>
+            </view>
+            <image src="{{jumpIcon}}"></image>
+        </view>
+        <view catchtap='makeLocation' class='mine-columns-item'>
+            <view>
+                <image src="{{addrIcon}}"></image>
+                <text>门店导航</text>
+            </view>
+            <image src="{{jumpIcon}}"></image>
+        </view>
+        <button open-type='contact' plain="true" class='mine-columns-item' style='border:none; border-bottom: 1px solid #f6f6f6;'>
+            <view>
+                <image src="{{wxIcon}}"></image>
+                <text>在线客服</text>
+            </view>
+            <image src="{{jumpIcon}}"></image>
+        </button>
+        <view catchtap='bindAbout' class='mine-columns-item'>
+            <view>    
+                <image src="{{aboutusIcon}}"></image>
+                <text>联系我们</text>
+            </view>
+            <image src="{{jumpIcon}}"></image>
+        </view>
+
+         <view catchtap='bindAboutus' class='mine-columns-item'>
+            <view>
+                <image src="{{aboutIcon}}"></image>
+                <text>关于我们</text>
+            </view>
+            <image src="{{jumpIcon}}"></image>
+        </view>
+
+    </view>
+    
+    
+    <view class='mine-footer'>
+        <view catchtap='technicalSupport' class='mine-columns-item'>
+                <view>
+                    <image src="{{technicalIcon}}"></image>
+                    <text>技术支持</text>
+                </view>
+                <image src="{{jumpIcon}}"></image>
+        </view>
+    </view>
+</view>

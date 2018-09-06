@@ -1,0 +1,16 @@
+<!--components/shopList/shopList.wxml-->
+<view class='shoplist' style="background: {{listBgColor}};">
+    <block wx:for="{{shopList}}" wx:key="index" wx:for-item="shopItem">
+        <view catchtap='shopBtn' data-id='{{shopItem.id}}'>
+            <myimg src="{{shopItem.picurl}}" styleImg="height:380rpx;width:100%;border-top-left-radius:8rpx; border-top-right-radius:8rpx;"></myimg>
+            <view class='shop-content'>
+                <view class='shop-title'>{{shopItem.title}}</view>
+                 <!-- <view class='shop-info'>{{shopItem.title}}</view>  -->
+                <view class='shop-price'>
+                    <view>¥<text>{{shopItem.price}}</text></view>
+                    <view>¥<text>{{shopItem.marketprice}}</text> </view>
+                </view>
+            </view>
+        </view>
+    </block>
+</view>

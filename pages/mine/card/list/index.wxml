@@ -1,0 +1,15 @@
+<!--pages/mine/card/list/index.wxml-->
+<view class="card {{isIpx?'fix-iphonex-view':''}}">
+    <view class='card-nav'>
+        <block wx:for="{{navArr}}" wx:key="index">
+            <view class='{{status==item.key?"active-nav":""}}' catchtap='navBtn' data-key='{{item.key}}'>
+                <text>{{item.value}}</text>
+            </view>
+        </block>
+    </view>
+    <view class='card-info'>
+        <card-list cardList="{{cardList}}" cardStatus="{{cardStatus}}" activeBgColor="{{activeBgColor}}"></card-list>
+    </view>
+</view>
+<emty wx:if="{{cardList.length==0}}" emtyText="暂无优惠券"></emty>
+<view class="{{isIpx?'fix-iphonex-button':''}}"></view>

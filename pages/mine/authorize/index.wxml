@@ -1,0 +1,9 @@
+<!--pages/mine/authorize/index.wxml-->
+<view class='authorize'>
+    <image src="{{avatarExampleUrl}}"></image>
+    <view class='authorize-info'>
+        <view>申请获取以下权限</view>
+        <view>获得你的公开信息(昵称、头像等)</view>
+        <button open-type="getUserInfo" bindgetuserinfo="userInfoHandler" type='primary'>授权登录</button>
+    </view>
+</view>

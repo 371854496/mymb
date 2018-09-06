@@ -1,0 +1,51 @@
+<!--pages/sales/experience/detail/index.wxml-->
+<import src="../../../../libs/wxParse/wxParse.wxml" />
+<view class="detail {{isIpx?'fix-iphonex-view':''}}">
+    <image src="{{itemInfo.picurl}}" class='detail-image'></image>
+    <view class="detail-title">
+        <view class='detail-title-left'>
+            <view class='detail-title-name'>{{itemInfo.title}}</view>
+            <view class='detail-title-num'>
+                <text>¥</text>
+                <text>{{itemInfo.marketprice}}</text>
+            </view>
+        </view>
+        <view class='detail-title-right'>
+            <button open-type='share' plain="true" class='hide-btn'>
+                <image src="{{shareIcon}}"></image>
+            </button>
+            <text>仅剩{{remainNum}}份</text>
+        </view>
+    </view>
+    <view class='detail-process'>
+        <view class='detail-process-top'>活动流程</view>
+        <view class='detail-process-content'>
+            <image src="{{processImg}}"></image>
+        </view>
+    </view>
+    <!-- <view class="detail-seller">
+        <view class='detail-seller-top'>商家信息</view>
+        <view class='detail-seller-content'>
+            <view class='detail-seller-content-left'>
+                <view>{{company.shopname}}</view>
+                <view>
+                    <image src="{{addrIcon}}"></image>
+                    <text>{{company.address}}</text>
+                </view>
+            </view>
+            <view class='detail-seller-content-right'>
+                <image src="{{phoneIcon}}" catchtap='callPhone'></image>
+            </view>
+        </view>
+    </view> -->
+    <view class="detail-activity">
+        <view class="detail-activity-top">活动须知</view>
+        <view class="detail-activity-content">
+            <template is="wxParse" data="{{wxParseData:article.nodes}}" />
+        </view>
+    </view>
+</view>
+<view class="{{isIpx?'fix-iphonex-button':''}} detail-footer" catchtap='bindBuy'>
+    <view>立即申请</view>
+</view>
+<back-home wx:if="{{experienceShareBol}}"></back-home>

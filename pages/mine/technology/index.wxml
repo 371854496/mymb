@@ -1,0 +1,53 @@
+<view style="border:0.5px solid #EEE;"></view>
+<view class="page">
+    <view class="frist">
+      <image class="bg-pic" src="../../../static/images/jszc_img_default_01@2x.png" />
+       <image class="logo" src="../../../static/images/jszc_img_default_02@2x.png" />
+       <view class="gsname">杭州蓝米美业科技有限公司</view>
+    </view>
+
+      <view class="two">
+            <view>
+              <text style="color:#999999;padding-right:24rpx;">一</text>
+              <text class="title">小程序定制服务</text>
+              <text style="color:#999999;padding-left:24rpx;">一</text>
+            </view>
+      </view>
+  
+       <view class="three">
+          <view>
+              <image class="icon-pic" src="../../../static/images/jszc_icon_default_09@2x.png" />
+              <view class="icon-font">美容</view>
+            </view>
+              
+              <view>
+              
+              <image class="icon-pic"style="left:340rpx;" src="../../../static/images/jszc_icon_default_06@2x.png" />
+              <view class="icon-font" style="left:340rpx;" >美发</view>
+            </view>
+
+            <view>
+              <image class="icon-pic"style="left:588rpx;" src="../../../static/images/jszc_icon_default_10@2x.png" />
+              <view class="icon-font" style="left:588rpx;" >医美</view>
+            </view>
+      
+       <view>
+        
+              <image class="icon-pic"style="top:168rpx" src="../../../static/images/jszc_icon_default_03@2x.png" />
+              <view class="icon-font" style="top:248rpx;">培训</view>
+              
+            </view>
+              
+              <view>
+              <image class="icon-pic"style="top:168rpx;left:340rpx;" src="../../../static/images/jszc_icon_default_05@2x.png" />
+              <view class="icon-font" style="top:248rpx;left:340rpx;" >商城</view>
+            </view>
+
+            <view>
+              <image class="icon-pic"style="top:168rpx;left:588rpx;" src="../../../static/images/jszc_icon_default_08@2x.png" />
+              <view class="icon-font" style="top:248rpx;left:588rpx;" >服务</view>
+            </view>
+ </view> 
+       <view  class="lx" bindtap='bindCallPhoneTab' >小程序免费技术咨询</view> 
+        <view ><image class="foot-pic" src="../../../static/images/jszc_img_default_09@2x.png" /></view>
+</view>

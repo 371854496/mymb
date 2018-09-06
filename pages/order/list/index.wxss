@@ -1,0 +1,132 @@
+/* pages/order/list/index.wxss */
+.orderlist-header{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    color:#222;
+    background: #fff;
+    z-index: 1000;
+}
+.orderlist-header>view{
+    display: inline-block;
+    padding: 20rpx;
+    font-size: 28rpx;
+    
+}
+.active-nav{
+   border-bottom: 2px solid #f33497;
+   color: #f33497;
+}
+.orderlist-content{
+    padding: 108rpx 0 2rpx 0;
+    background: #f5f5f5;
+    font-size: 28rpx;
+}
+.order-item{
+    background: #fff;
+    margin-bottom: 20rpx;
+}
+.order-item-top{
+    height: 100rpx;
+    padding: 0 30rpx;
+    line-height: 100rpx;
+    color: #999;
+}
+.order-item-top>text:first-of-type{
+    max-width: 500rpx;
+    overflow-x: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    display:inline-block;
+}
+.order-item-top>text:last-of-type{
+    float: right;
+    color: #f33497;
+}
+/*订单列表  */
+.order-item-info{
+    padding: 30rpx 0;
+    margin-left: 30rpx;
+    border-bottom: 1px solid #f0f0f0;
+    border-top: 1px solid #f0f0f0;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+.order-item-info>image{
+    width: 160rpx;
+    height: 160rpx;
+    border-radius: 10rpx;
+    margin-right: 30rpx;
+}
+.order-item-content{
+    min-height: 160rpx;
+    width: 400rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.order-item-content-title{
+    font-size: 28rpx;
+    color:#222;
+}
+.order-item-content-price{
+    font-size: 32rpx;
+    color:#f33497;
+}
+.order-item-right{
+    position: absolute;
+    top: 30rpx;
+    right: 30rpx;
+    color:#999;
+    font-size: 30rpx;
+}
+.order-item-bottom{
+    height: 100rpx;
+    position: relative;
+}
+.order-item-bottom>view{
+    position: absolute;
+    top: 18rpx;
+    right: 30rpx;
+}
+.order-item-bottom>view>view{
+    display: inline-block;
+    width: 170rpx;
+    height: 60rpx;
+    text-align: center;
+    line-height: 60rpx;
+    border: 1px solid #f33497;
+    color:#f33497;
+    border-radius: 4rpx;
+    font-size: 28rpx;    
+}
+.order-item-bottom>view>view:first-of-type{
+    margin-right:20rpx; 
+    border: 1px solid #ccc;
+    color:#666;
+}
+.loadmore {
+  height: 60rpx;
+  width: 100%;
+  font-size: 32rpx;
+  line-height: 60rpx;
+  background: #f0f0f0;
+  text-align: center;
+  color: #333;
+}
+.order-item-bottom__btn{
+    width:170rpx;
+    height:60rpx;
+    background: #fff;
+    font-size: 28rpx;
+    color:#f33497;
+    border:1px solid #f33497;
+    border-radius:4rpx;
+    text-align:center;
+    line-height:60rpx;
+    padding: 0;
+    box-sizing: content-box;
+}

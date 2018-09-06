@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText":"免费体验",
+    "usingComponents":{
+        "back-home":"/components/backHome/component"
+    }
+}

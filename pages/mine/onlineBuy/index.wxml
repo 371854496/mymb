@@ -1,0 +1,26 @@
+<!--pages/mine/onlineBuy/index.wxml-->
+<wxs module="filter" src="../../../filter/filter.wxs"/>
+<view class='onlineBuy'>
+    <view class='original-price'>
+        <view>支付金额</view>
+        <view>
+            <text>￥</text>
+            <input type='digit' focus='true'  bindblur="bindBuy"></input>
+        </view>
+    </view>
+    <view class='card' catchtap='chooseCard' style="color:{{cardPrompt?'':'#999'}}">
+        <text>优惠券/体验券/抵用券</text>
+         <view>
+            <text class="{{filter.isCardPrompt(cardPromptType)}}">{{cardPrompt}}</text>
+            <image src="{{jumpIcon}}"></image>
+        </view>
+    </view>
+    <view class='reality-price'>
+        <view>实付金额</view>
+        <view>
+            <text class="{{price>0?'reality-price_active':''}}">￥</text>
+            <text class="{{price>0?'reality-price_active':''}}">{{amount||'0.00'}}</text>    
+        </view>
+    </view>
+    <view class="buyBtn {{price>0?'buyBtn_active':''}}" catchtap='submitOrder'>和店员已确认，确认付款</view>
+</view>

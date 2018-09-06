@@ -1,0 +1,10 @@
+{
+    "navigationBarTitleText":"",
+    "enablePullDownRefresh": true,
+    "onReachBottomDistance": "50",
+    "usingComponents":{
+        "itemnav":"/components/itemNav/component",
+        "shoplist":"/components/shopList/component",
+        "emty":"/components/emty/component"
+    }
+}

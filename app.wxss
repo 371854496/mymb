@@ -1,0 +1,45 @@
+/**app.wxss**/
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+} 
+.loadmore {
+  height: 60rpx;
+  width: 100%;
+  font-size: 32rpx;
+  line-height: 60rpx;
+  background: #f0f0f0;
+  text-align: center;
+  color: #333;
+}
+.fix-iphonex-view{
+    margin-bottom: 68rpx!important;
+}
+.fix-iphonex-button {
+  position: fixed;
+  bottom:68rpx!important;
+  width: 100%;
+}
+.fix-iphonex-button::after {
+  content: ' ';
+  position: fixed;
+  bottom: 0!important;
+  height: 68rpx!important;
+  width: 100%;
+  background: #fff;
+}
+.fix-jumpindex{
+    width:96rpx;
+    height: 96rpx;
+    position: fixed;
+    bottom: 50rpx;
+    right: 50rpx;
+}
+/*隐藏button边框  */
+.hide-btn{
+    border:none!important;
+}

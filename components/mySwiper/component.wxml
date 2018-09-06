@@ -1,0 +1,20 @@
+<!--components/mySwiper/component.wxml-->
+<view class='myswiper-info' wx:if="{{swiperList.length}}">
+    <swiper autoplay="true" interval="5000" duration="500" circular="true" bindchange="swiperChange"
+    style="height:480rpx;width:100%">
+        <block wx:for="{{swiperList}}" wx:key="index">
+            <swiper-item bindtap='banTap' data-id="{{item}}">
+                <!-- <image src="{{item.picurl}}" style="height:{{height}}rpx;width:100%"/> -->
+                <myimg src="{{item.picurl}}" styleImg="height:480rpx;width:100%"></myimg>
+            </swiper-item>
+        </block>
+    </swiper>
+    <view class='myswiper-icons'>
+        <block wx:for="{{swiperList}}" wx:key="index">
+            <view class="{{swiperActiveIndex==index?'myswiper-icon-active':''}}"></view>
+        </block>
+    </view>
+</view>
+<view style="height:480rpx;width:100%" wx:else>
+<!-- <myimg src="{{picurl}}" ></myimg> -->
+</view>

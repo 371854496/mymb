@@ -1,0 +1,11 @@
+/* pages/mine/member/vip/index.wxss */
+.vip{
+    background: #714a45;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+}
+.vip-img{
+    width: 100%;
+    height: 1015rpx;
+}

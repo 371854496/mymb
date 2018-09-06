@@ -1,0 +1,61 @@
+<!--pages/order/list/index.wxml-->
+<wxs module='filter' src='../../../filter/filter.wxs' />
+<view class='orderlist-header'>
+    <block wx:for="{{navArr}}" wx:key="index">
+        <view class='{{orderForm.status==item.key?"active-nav":""}}' catchtap='navBtn' data-key='{{item.key}}'>
+            <text>{{item.value}}</text>
+        </view>
+    </block>
+</view>
+<view class="{{isIpx?'fix-iphonex-view':''}}">
+    <view class='orderlist-content' wx:if="{{itemList.length}}">
+        <block wx:for="{{itemList}}" wx:for-index="itemIndex" wx:key="id">
+            <view class='order-item'>
+                <view class='order-item-top'>
+                    <text>{{filter.isItemModel(item.ordermodel)}}订单编号：{{item.orderid}}</text>
+                     <text>{{filter.isOrderStatus(item.status)}}</text> 
+                </view>
+                <view class='order-item-info' catchtap='orderDetailBtn' data-id='{{item.orderid}}'>
+                    <image src="{{item.orderDetails[0].itempic}}" />
+                    <view class="order-item-content">
+                        <view class='order-item-content-title'>{{item.orderDetails[0].title}}</view>
+                        <view class='order-item-content-price'>¥{{item.orderDetails[0].price}}</view>
+                    </view>
+                    <view class='order-item-right'>
+                        ×{{item.orderDetails[0].num}}
+                    </view>
+                </view>
+                <view class='order-item-bottom'>
+                    <view>
+                        <block wx:if="{{item.status==0}}">
+                            <view catchtap='bindCancelOrder' data-id='{{item.orderid}}'>取消订单</view>
+                            <view catchtap='bindPayItem' data-id='{{item.orderid}}' data-title="{{item.orderDetails.length==1?item.orderDetails[0].title:''}}">付款</view>
+                        </block>
+                        <block wx:if="{{item.status==6}}">
+                            <button class='order-item-bottom__btn' catchtap='goToCollage' data-orderid='{{item.orderid}}' data-itemid='{{item.orderDetails[0].itemid}}'>去邀请好友</button>
+                        </block>
+                        <block wx:if="{{item.status==1}}">
+                            <button class='order-item-bottom__btn' open-type="contact" show-message-card="true">联系客服</button>
+                        </block>
+                        <block wx:if="{{item.status==7}}">
+                            <button class='order-item-bottom__btn' open-type="contact" show-message-card="true">联系客服</button>
+                        </block>
+                        <block wx:if="{{item.status==3}}">
+                            <button catchtap='scoreOrder' data-item='{{item}}' class='order-item-bottom__btn'>评价</button>
+                        </block>
+                        <block wx:if="{{item.status==5||item.status==8||item.status==4}}">
+                            <button catchtap='delOrder' data-id='{{item.orderid}}' class='order-item-bottom__btn'>删除订单</button>
+                        </block>
+                       
+                    </view>
+                </view>
+            </view>
+        </block>
+    </view>
+    <emty wx:else emtyText="暂无订单"></emty>
+    <view class="loadmore" hidden="{{!pullBol}}">
+        <text hidden="{{!nomore}}">{{nomoreText}}</text>
+        <text hidden="{{nomore}}"> {{loadmoreText}}</text>
+    </view>
+</view>
+<view class="{{isIpx?'fix-iphonex-button':''}}"></view>

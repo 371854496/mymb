@@ -1,0 +1,4 @@
+<!--pages/mine/member/vip/index.wxml-->
+<view class='vip'>
+    <image src="{{vipImg}}" class='vip-img'></image>
+</view>

@@ -1,0 +1,21 @@
+<!--pages/mine/member/detail/index.wxml-->
+<view class='detail'>
+    <view class='detail-header'>
+        <view class='detail-header-image'>
+            <image src="{{memberCardImg}}">
+            </image>
+            <text>NO.{{info.memberCard.carnum||''}}</text>
+        </view>
+        <view catchtap='bindBuy' class='detail-header-btn'>在线买单</view>
+    </view>
+    <view class='detail-content'>
+        <view catchtap='bindVip'>
+            <text>会员卡详情</text>
+            <image src="{{jumpIcon}}"></image>
+        </view>
+        <view catchtap='lookBill'>
+            <text>账单记录</text>
+            <image src="{{jumpIcon}}"></image>
+        </view>
+    </view>
+</view>

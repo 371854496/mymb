@@ -1,0 +1,14 @@
+<!--components/dialog/component.wxml-->
+<view wx:if="{{showModal}}">
+    <view class="modal-mask" catchtap="hideModal" catchtouchmove="preventTouchMove"></view>
+    <view class="modal-dialog">
+        <icon type='cancel' color='#ccc' class='modal-dialog-cancal' catchtap="hideModal"></icon>
+        <view>
+            <view>
+                <view class='modal-title' wx:if="{{title}}">{{title}}</view>
+                <view class='modal-content' wx:if="{{content}}">{{content}}</view>
+                <view class='modal-active' wx:if="{{price}}">¥{{price}}</view>
+            </view>
+        </view>
+    </view>
+</view>

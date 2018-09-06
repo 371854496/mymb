@@ -1,0 +1,211 @@
+/* pages/item/detail/index.wxss */
+
+.idetail {
+    font-size: 24rpx;
+    color: #222;
+    background: #fff;
+    padding-bottom: 100rpx;
+}
+
+.idetail-swiper {
+    height: 480rpx;
+    width: 100%;
+}
+
+.idetail-swiper-image {
+    width: 100%;
+}
+
+.idetail-swiper-image>image {
+    display: block;
+    width: 100%;
+    height: 480rpx;
+}
+
+.idetail-title {
+    padding: 20rpx 30rpx;
+    border-bottom: 20rpx solid #f6f6f6;
+    background: #fff;
+    display: flex;
+    align-items: center;
+}
+
+.idetail-title-left {
+    flex: 3;
+    border-right: 1px dashed #e3e3e3;
+}
+
+.idetail-title-left>view:first-of-type {
+    font-size: 32rpx;
+    font-weight:bold; 
+    line-height: 40rpx;
+    padding-right: 30rpx;
+    padding-bottom: 40rpx;
+}
+
+.idetail-title-left>view:last-of-type>text:first-of-type {
+    font-size: 48rpx;
+    line-height: 48rpx;
+    color: #f33497;
+    padding-right: 16rpx;
+}
+
+.idetail-title-left>view:last-of-type>text:last-of-type {
+    font-size: 24rpx;
+    text-decoration: line-through;
+    color: #999;
+}
+
+.idetail-title-right {
+    flex: 1;
+    text-align: center;
+    color: #666;
+}
+
+.idetail-title-right>button>image {
+    width: 34rpx;
+    height: 38rpx;
+}
+
+.idetail-title-right>view+view {
+    padding-top: 10rpx;
+}
+
+.idetail-seller {
+    background: #fff;
+    padding: 0 30rpx;
+    margin-bottom: 20rpx;
+}
+
+.idetail-seller-top {
+    font-size: 32rpx;
+    line-height: 100rpx;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.idetail-seller-content {
+    display: flex;
+    align-items: center;
+}
+
+.idetail-seller-content-left {
+    flex: 3;
+    margin: 10rpx 0;
+    border-right: 1px dashed #e3e3e3;
+}
+
+.idetail-seller-content-left>view:first-of-type {
+    font-size: 32rpx;
+    padding: 15rpx 0 40rpx 0;
+}
+
+.idetail-seller-content-left>view:first-of-type>view {
+    font-size: 26rpx;
+}
+.idetail-seller-content-left>view:last-of-type{
+    padding-bottom: 24rpx;
+}
+.idetail-seller-content-left>view:last-of-type>image {
+    width: 30rpx;
+    height: 30rpx;
+    vertical-align: bottom;
+    padding-right: 16rpx;   
+}
+
+.idetail-seller-content-right {
+    flex: 1;
+    text-align: center;
+}
+
+.idetail-seller-content-right>image {
+    width: 40rpx;
+    height: 40rpx;
+}
+
+/*评价  */
+
+.idetail-score {
+    background: #fff;
+    margin-bottom: 20rpx;
+}
+
+.idetail-score-top {
+    padding: 0 30rpx;
+}
+
+.idetail-score-top__table {
+    height: 88rpx;
+    display: table;
+    width: 100%;
+    font-size: 28rpx;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.idetail-score-top__table>view {
+    display: table-row;
+}
+
+.idetail-score-top__table>view>text {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: left;
+}
+
+.idetail-score-top__table>view>view {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: right;
+    color: #f33497;
+}
+
+.idetail-score-top__table>view>view>image {
+    vertical-align: middle;
+    padding-left:8rpx;
+    width: 12rpx;
+    height: 22rpx;
+}
+
+.idetail-score-top__table>view>view>text {
+    vertical-align: middle;
+}
+
+.idetail-info {
+    padding: 0 30rpx;
+    background: #fff;
+}
+
+.idetail-info-top {
+    font-size: 32rpx;
+    line-height: 100rpx;
+    border-bottom: 1px solid #eaeaea;
+}
+.idetail-info-content{
+    padding-top: 20rpx;
+    color:#666;
+}
+.idetail-bind {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 1000;
+    text-align: center;
+    line-height: 100rpx;
+    height: 100rpx;
+    display: flex;
+    color: #fff;
+    font-size: 34rpx;
+}
+.idetail-bind>view:first-of-type {
+    flex: 1;
+    background-color: #fa95c9;
+}
+
+.idetail-bind>button{
+    flex: 1;
+    background-color: #f33497;
+    color: #fff;
+    border-radius: 0;
+}
+.idetail-info-content{
+  font-size: 30rpx;
+}

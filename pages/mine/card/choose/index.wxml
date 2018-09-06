@@ -1,0 +1,7 @@
+<!--pages/mine/card/choose/index.wxml-->
+<view class='choose'>
+    <view class='choose-top'></view>
+    <view class='choose-info'>
+        <card-list cardList="{{cardList}}" bindchooseCard="chooseCard"></card-list>
+    </view>  
+</view>

@@ -1,0 +1,63 @@
+/* components/scoreList/component.wxss */
+.scorelist{
+    font-size: 32rpx;
+    color:#222;
+    padding-left: 30rpx;
+    padding-right: 30rpx;
+}
+.scorelist-content{
+    border-bottom:1px solid #eaeaea;  
+    padding:32rpx 0 22rpx 0;  
+}
+.scorelist-content-top{
+    display: flex;
+    align-items:center;
+    margin-bottom: 32rpx;
+}
+.scorelist-content-top>image{
+    width: 78rpx;
+    height: 78rpx;
+    border-radius: 50%;
+    margin-right: 28rpx;
+}
+.scorelist-content-top>text{
+    margin-right: 28rpx;
+}
+.scorelist-content-top>view{
+    font-size: 0;
+}
+.scorelist-content-top>view>image{
+    width: 28rpx;
+    height: 28rpx;
+    margin-right: 10rpx;
+}
+.scorelist-content-middle{
+    font-size: 28rpx;
+    line-height: 28rpx;
+    color:#999;
+    margin-bottom: 10rpx;
+}
+.scorelist-content-bottom{
+    line-height: 52rpx;
+}
+.scorelist-content-imgs{
+    margin-top: 20rpx;
+    margin-bottom: -14rpx; 
+    font-size: 0;
+    /* display: flex;
+    justify-content: space-between;
+    flex-flow: wrap; */
+}
+.scorelist-content-imgs>view{
+    display: inline-block;
+    width: 25%;
+}
+/* .scorelist-content-imgs>view:nth-of-type(4n){
+    text-align: right;
+} */
+.scorelist-content-imgs>view>image{ 
+    width: 160rpx;
+    height: 160rpx;
+    border-radius: 10rpx;
+    margin-bottom: 24rpx;
+}

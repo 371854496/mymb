@@ -1,0 +1,10 @@
+<!--pages/sales/rush/detail/index.wxml-->
+<import src="../../../../libs/wxParse/wxParse.wxml" />
+<view class="detail {{isIpx?'fix-iphonex-view':''}}" wx:if="{{itemInfo.id}}">
+    <view class='detail-info'>
+         <template is="wxParse" data="{{wxParseData:article.nodes}}" />
+    </view>
+    <!-- <image class='detail-btn' src="{{rushBtnImg}}" catchtap='bindBuy'></image> -->
+    <view   class="ljbtn"catchtap='bindBuy'>立即抢</view>
+</view>
+<view class="{{isIpx?'fix-iphonex-button':''}}"></view>

@@ -1,0 +1,15 @@
+<!--components/itemNav/component.wxml-->
+<scroll-view scroll-x class='nav'>
+    <view class="nav-title {{activeId==''?'active-nav-font':''}}" 
+        catchtap='navBtn'  data-id=''>
+            <text>全部</text>
+            <view wx:if="{{activeId==''}}" class='active-nav-border'></view>
+    </view>
+    <block wx:for="{{navArr}}" wx:key='index' wx:for-item='navOjb'>
+        <view class="nav-title {{activeId==navOjb.id?'active-nav-font':''}}" 
+        catchtap='navBtn'  data-id='{{navOjb.id}}'>
+            <text>{{navOjb.catename}}</text>
+            <view wx:if="{{activeId==navOjb.id}}" class='active-nav-border'></view>
+        </view>
+    </block>
+</scroll-view>

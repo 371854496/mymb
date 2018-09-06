@@ -1,0 +1,73 @@
+<!--pages/item/detail/index.wxml-->
+<import src="../../../libs/wxParse/wxParse.wxml" />
+<view class="idetail {{isIpx?'fix-iphonex-view':''}}" wx:if="{{itemInfo.id}}">
+    <swiper indicator-dots="true" autoplay="true" class='idetail-swiper' indicator-color="rgba(235,235,240,0.5)" indicator-active-color="#fff"  wx:if="{{itemPicture.length}}">
+        <block wx:for="{{itemPicture}}" wx:key="index">
+            <swiper-item class="idetail-swiper-image">
+                <!-- <image src="{{item.picurl}}" /> -->
+                <myimg src='{{item.picurl}}' styleImg="height:480rpx;width: 100%;display: block;"></myimg>
+            </swiper-item>
+        </block>
+    </swiper>
+    <view  wx:if="{{itemPicture.length==0}}">
+        <myimg src='{{itemInfo.picurl}}' styleImg="height:480rpx;width: 100%;"></myimg>
+    </view>
+    <!-- <image class='idetail-swiper' src='{{itemInfo.picurl}}' "></image> -->
+    <view class="idetail-title">
+        <view class='idetail-title-left'>
+            <view>{{itemInfo.title}}</view>
+            <view>
+                <text>¥{{itemInfo.price}}</text>
+                <text>¥{{itemInfo.marketprice}}</text>
+            </view>
+        </view>
+        <view class='idetail-title-right'>
+             <button open-type='share' plain="true" class='hide-btn'>
+                <image src="{{shareIcon}}"></image>
+            </button>
+            <view>{{totalNum}}人已预约</view>
+        </view>
+    </view>
+    <!-- <view class="idetail-seller">
+        <view class='idetail-seller-top'>商家信息</view>
+        <view class='idetail-seller-content'>
+            <view class='idetail-seller-content-left'>
+                <view>{{company.shopname}}</view>
+                <view>
+                    <image src="{{addrIcon}}"></image>
+                    <text>{{company.address}}</text>
+                </view>
+            </view>
+            <view class='idetail-seller-content-right'>
+                <image src="{{phoneIcon}}" catchtap='callPhone'></image>
+            </view>
+        </view>
+    </view> -->
+    <!-- <view class="idetail-score" wx:if="{{scoreInfo.scoreList.length}}">
+        <view catchtap='lookScore' class='idetail-score-top'>
+            <view class='idetail-score-top__table'>
+                <view>
+                    <text>用户评价({{scoreInfo.totalcount}})</text>
+                    <view>
+                        <text>查看全部评价</text>
+                        <image src='{{scoreMoreIcon}}'></image>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <scorelist class='idetail-score-content' scoreList="{{scoreInfo.scoreList}}"></scorelist>
+    </view> -->
+    <view class="idetail-info">
+        <view class='idetail-info-top'>项目介绍</view>
+        <view class="idetail-info-content">
+            <!-- <rich-text nodes="{{itemInfo.description}}"></rich-text> -->
+            <template is="wxParse" data="{{wxParseData:article.nodes}}" />
+        </view>
+    </view>
+</view>
+<back-home bottom="170rpx" wx:if="{{itemShareBol}}"></back-home>
+<view class="idetail-bind {{isIpx?'fix-iphonex-button':''}}">
+    <view catchtap='callPhone'>电话预约</view>
+    <!-- <button bindgetphonenumber='bindBuy' class='hide-btn' open-type='getPhoneNumber'>立即购买</button>  -->
+    <button catchtap='bindBuy' class='hide-btn'>立即购买</button> 
+</view>

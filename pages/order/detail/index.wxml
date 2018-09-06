@@ -1,0 +1,60 @@
+<!--pages/order/detail/index.wxml-->
+<wxs module='filter' src='../../../filter/filter.wxs' />
+<view class="order-detail {{isIpx?'fix-iphonex-view':''}}">
+    <view class="order-detail-header" style="background:{{info.order.status==4||info.order.status==5?'#c0c0c0':''}};">
+        <view>{{filter.isItemModel(info.order.ordermodel)}}订单{{filter.isOrderStatus(info.order.status)}}</view>
+        <image src="{{headerIcon}}"></image>
+    </view>
+    <view class='order-detail-info'>
+        <block wx:for="{{info.orderdetail}}" wx:for-index="itemIndex" wx:key="itemIndex">
+            <view class="order-item">
+                <image src="{{item.itempic}}" class='order-item-image'/>
+                <view class="order-item-content">
+                    <view>{{item.title}}</view>
+                    <view>¥{{item.price}}</view>
+                </view>
+                <view class='order-item-right'>
+                    ×{{item.num}}
+                </view>
+            </view>
+        </block>
+    </view>
+    <view class='order-detail-other'>
+        <view>
+            <text space='emsp'>姓  名：</text>
+            <text>{{info.appointment.realname}}</text>
+        </view>
+        <view>
+            <text>联系电话：</text>
+            <text>{{info.appointment.mobile}}</text>
+        </view>
+        <view>
+            <text>下单时间：</text>
+            <text>{{info.appointment.createtime}}</text>
+        </view>
+        <view>
+            <text>预约时间：</text>
+            <text>{{info.appointment.servicetime}}</text>
+        </view>
+        <view>
+            <text space='emsp'>备  注：</text>
+            <text>{{info.order.remark}}</text>
+        </view>
+        <view>
+            <text>商品原价：</text>
+            <text>¥{{info.orderdetail[0].num*info.orderdetail[0].price}}</text>
+        </view>
+        <view>
+            <text>付款方式：</text>
+            <text>微信支付</text>
+        </view>
+    </view>
+    <view class='order-detail-price' wx:if="{{info.order.status!=5}}">
+        <view>
+            <text space='emsp'>{{info.order.status==0?'应  付':'实  付'}}：</text>
+            <text>¥{{info.order.amount}}</text>
+        </view>
+    </view>
+</view>
+<view class="{{isIpx?'fix-iphonex-button':''}}">
+</view>

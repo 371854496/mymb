@@ -1,0 +1,34 @@
+<!--components/mySlider/component.wxml-->
+<wxs module="filter" src="../../filter/filter.wxs"/>
+<view class='myslider' style="height:{{height*1+24+28}}rpx">
+    <view style="height:{{height}}rpx">
+        <view class='myslider-left' style="width:{{(leftValue-activeValue)/(leftValue-rightValue)*100}}%;background:{{leftBgColor}};border-radius: {{height/2}}rpx">
+            <view class="myslider-left-top-text top-color">
+                <text>¥</text>
+                <text class='font-num'>{{leftValue}}</text>
+            </view>
+            <view class="myslider-left-bottom-text bottom-color"
+                style="top:{{height*1+24}}rpx">原价</view>
+            <view class='myslider-active' style="width:{{height*5}}rpx;height:{{height*5}}rpx;background:{{leftBgColor}};top:{{-height*2}}rpx;right:{{-height*2}}rpx">
+            </view>
+            <view class='myslider-active__in' style="width:{{height*3}}rpx;height:{{height*3}}rpx;background:{{leftBgColor}};top:{{-height}}rpx;right:{{-height}}rpx">
+            </view>
+        </view>
+        <view class='myslider-right' style="width:{{100-(leftValue-activeValue)/(leftValue-rightValue)*100}}%;background:{{rightBgColor}};border-radius: {{height/2}}rpx">
+            <view class="myslider-active-top-text top-color" wx:if="{{(leftValue-activeValue)>0&&(activeValue-rightValue)>0}}"
+            style="left:{{filter.isLeft(leftValue,rightValue,activeValue)}}rpx;">
+                <text>¥</text>
+                <text class='font-num'>{{activeValue}}</text>
+            </view>
+            <view class="myslider-right-top-text top-color">
+                <text>¥</text>
+                <text class='font-num'>{{rightValue}}</text>
+            </view>
+            <view class="myslider-active-bottom-text bottom-color" style="top:{{height*1+24}}rpx;left:{{filter.isLeft(leftValue,rightValue,activeValue)}}rpx;" 
+            wx:if="{{(leftValue-activeValue)>0&&(activeValue-rightValue)>0}}">
+                现价
+            </view>
+            <view class="myslider-right-bottom-text bottom-color" style="top:{{height*1+24}}rpx;">底价</view>
+        </view>
+    </view>
+</view>

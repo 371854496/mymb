@@ -1,0 +1,11 @@
+/* pages/project/index.wxss */
+.project-header{
+    position: fixed;
+    top: 0;
+    height: 88rpx;
+    width: 100%;
+    z-index: 1000;
+}
+.project-content{
+    padding-top: 94rpx;
+}

@@ -1,0 +1,121 @@
+var formatNumber = function (n) {
+    n =n?n.toString():'';
+    return n[1] ? n : '0' + n;
+}
+var formatDate = function (date){
+    var mdate = getDate();
+    return{
+        year : mdate.getFullYear() || 0,
+        month: formatNumber(mdate.getMonth()+1)|| 0,
+        day: formatNumber(mdate.getDate() || 0),
+        h: formatNumber(mdate.getHours() || 0),
+        m: formatNumber(mdate.getMinutes() || 0),
+        s: formatNumber(mdate.getSeconds() || 0),
+    }
+}
+var formatMonth = function (date) {
+    // var dateObj=formatDate(date);
+    // console.log('formatDate', JSON.stringify(dateObj));
+    var dateArr = date.split('-');
+    return dateArr[0] + "年" + formatNumber(dateArr[1])+"月";
+};
+var formatDay = function (date) {
+    var dateObj = formatDate(date);
+    return dateObj.year + "-" + dateObj.month + "-" + dateObj.day;
+}
+var formatMinute = function (date) {
+    var dateObj = formatDate(date);
+    return dateObj.h + ":" + dateObj.m;
+}
+var remainTime=function(date){
+    var time=Math.floor(date/1000);
+    var h = Math.floor(time / 3600);
+    var m = Math.floor((time - 3600 * h) / 60);
+    var s = Math.floor(time % 60);
+    return formatNumber(h) + ":" + formatNumber(m) + ":" + formatNumber(s);
+}
+//卡卷状态不同的颜色显示
+var isCardPrompt=function(type){
+    switch(parseInt(type)){
+        case 0:
+            return 'card__default';
+        case 1:
+            return '';
+        case 2:
+            return 'card__active';
+        default:
+            return '';
+    }
+}
+// 卡片有效期
+var isCardTime = function (createtime, expiretime){
+    if (expiretime){
+        return createtime + "至" + expiretime;
+    }else{
+        return "永久可用";
+    }
+} 
+// 进度条的当前位置
+var isLeft = function (leftValue, rightValue, activeValue){
+    var num = (activeValue - rightValue) /(leftValue - rightValue)*100;
+    // console.log('%',num);
+    if(num<15){
+        return '-100'
+    }else if(num>85){
+        return '50'
+    }else{
+        return '-50'
+    }    
+}
+//产品类型
+var isItemModel = function (model){
+    switch(parseInt(model)){
+        case 1:
+            return '普通';
+        case 2:
+            return '拼团';
+        case 3:
+            return '砍价';
+        case 4:
+            return '免费';
+        case 5:
+            return '抢购';
+        default:
+            return '';
+    }
+}
+//订单状态
+//0:待支付，6:待成团，1:待消费，3:待评价，4:已完成，5:已取消，7:退款中，8:退款完成
+isOrderStatus=function(status){
+    switch (parseInt(status)) {
+        case 0:
+            return '待付款';
+        case 6:
+            return '待成团';
+        case 1:
+            return '待消费';
+        case 3:
+            return '待评价';
+        case 4:
+            return '已完成';
+        case 5:
+            return '已取消';
+        case 7:
+            return '退款中';
+        case 8:
+            return '退款完成';
+        default:
+            return '';
+    }
+}
+module.exports = {
+    formatMonth: formatMonth,
+    formatDay: formatDay,
+    formatMinute: formatMinute,
+    remainTime: remainTime,
+    isCardPrompt: isCardPrompt,
+    isCardTime: isCardTime,
+    isLeft: isLeft,
+    isItemModel: isItemModel,
+    isOrderStatus: isOrderStatus
+}

@@ -1,0 +1,61 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/logs/logs",
+        "pages/project/index",
+        "pages/item/detail/index",
+        "pages/order/submit/index",
+        "pages/order/list/index",
+        "pages/order/detail/index",
+        "pages/mine/index",
+        "pages/mine/onlineBuy/index",
+        "pages/mine/card/list/index",
+        "pages/mine/card/choose/index",
+        "pages/mine/about/index",
+        "pages/mine/bill/index",
+        "pages/mine/score/edit/index",
+        "pages/mine/score/list/index",
+        "pages/mine/member/vip/index",
+        "pages/mine/member/detail/index",
+        "pages/mine/authorize/index",
+        "pages/mine/article/index",
+        "pages/mine/technology/index",
+        "pages/sales/collage/detail/index",
+        "pages/sales/collage/friend/index",
+        "pages/sales/bargain/detail/index",
+        "pages/sales/experience/detail/index",
+        "pages/sales/welfare/detail/index",
+        "pages/sales/discount/detail/index",
+        "pages/sales/rush/detail/index"   
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "",
+        "navigationBarTextStyle": "black"
+    },
+    "tabBar": {
+        "color": "#999",
+        "selectedColor": "#f33497",
+        "list": [
+            {
+                "pagePath": "pages/index/index",
+                "text": "首页",
+                "iconPath": "static/images/index.png",
+                "selectedIconPath": "static/images/index_active.png"
+            },
+            {
+                "pagePath": "pages/project/index",
+                "text": "项目",
+                "iconPath": "static/images/project.png",
+                "selectedIconPath": "static/images/project_active.png"
+            },
+            {
+                "pagePath": "pages/mine/index",
+                "text": "我的",
+                "iconPath": "static/images/mine.png",
+                "selectedIconPath": "static/images/mine_active.png"
+            }
+        ]
+    }
+}

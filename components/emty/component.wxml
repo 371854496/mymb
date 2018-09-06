@@ -1,0 +1,7 @@
+<!--components/emty/component.wxml-->
+<view class="page__bd">
+    <view class='emty'>
+            <image src="{{emtyImg}}"></image>
+            <view>{{emtyText}}</view>
+    </view>
+</view>

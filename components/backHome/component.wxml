@@ -1,0 +1,3 @@
+<!--components/backHome/component.wxml-->
+<image class="jumpindex {{isIpx?'fix-iphonex-button':''}}" src="{{jumpIcon}}" 
+catchtap='jumpBtn' style="bottom:{{bottom}}"></image>

@@ -1,0 +1,9 @@
+{
+    "navigationBarTitleText":"养胸堂",
+    "usingComponents": {
+        "card-list": "/components/cardList/component",
+        "myimg":"/components/myImg/component",
+        "myswiper": "/components/mySwiper/component"
+    }
+    
+}

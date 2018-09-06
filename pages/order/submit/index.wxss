@@ -1,0 +1,126 @@
+/* pages/order/submit/index.wxss */
+.submit{
+    font-size: 30rpx;
+    color:#222;
+    padding-bottom: 100rpx;
+    background: #f6f6f6;
+}
+.submit-list{
+    background: #fff;
+    padding-left:40rpx;
+    margin-top: 20rpx;
+}
+.submit-list>view{
+    height: 100rpx;
+    line-height: 100rpx;
+    border-bottom: 1px solid #eaeaea;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.submit-list>view>text{
+    flex:1;
+}
+.card__active{
+    color:#f33497;
+}
+.card__default{
+    color:#999;
+}
+.submit-list>view>input,.submit-list>view>picker{
+    flex:1;
+    text-align:right;
+    padding-right:30rpx;
+
+}
+.submit-list>view>view>image{
+    width:15rpx;
+    height: 26rpx;
+    padding-right: 30rpx;
+    padding-left:10rpx;
+}
+.submit-textarea{
+   background: #fff;
+   padding: 0 40rpx 20rpx 40rpx;
+}
+.submit-textarea>view{
+    line-height: 100rpx;
+}
+.submit-textarea>textarea{
+    background: #f6f6f6;
+    height: 176rpx;
+    width: 100%;
+}
+.submit-item{
+    display: flex;
+    align-items: center;
+    width: 670rpx;
+	height: 220rpx;
+	background-color: #ffffff;
+	border-radius: 8rpx;
+	border: solid 1px #eaeaea;
+    margin: 20rpx auto;
+}
+.submit-item>image{
+    width: 154rpx;
+    height: 154rpx;
+    padding: 0 30rpx;
+}
+.submit-item>view{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height:154rpx;
+    width: 456rpx;
+}
+.submit-item>view>view:last-of-type{
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+.submit-item-price{
+    color:#f33497;
+    font-size: 32rpx;
+}
+.submit-item-num{
+    padding-right: 30rpx;
+    display: flex;
+    width: 240rpx;
+}
+.submit-item-num>view{
+    flex: 1; 
+    border: 2rpx solid #999;
+    text-align: center;
+    height: 56rpx;
+    font-size:32rpx;
+    line-height: 56rpx;
+}
+.submit-item-num>view:nth-of-type(2){
+    border-left: none; 
+    border-right: none; 
+    color:#333;
+    font-size:28rpx;
+}
+.submit-item-num>view:nth-of-type(2)>input{
+    height: 56rpx;
+    line-height: 56rpx; 
+}
+.submit-btn{
+    position: fixed;
+    bottom: 0;
+    height: 100rpx;
+    width: 100%;
+    text-align: center;
+    background-color: #f33497;
+    border: none;
+    border-radius: 0;
+    color:#fff;
+    font-size: 28rpx;
+    padding: 20rpx 0;
+}
+.submit-btn>view{
+    line-height: 28rpx;
+}
+.submit-btn>view+view{
+    padding-top: 4rpx;
+}

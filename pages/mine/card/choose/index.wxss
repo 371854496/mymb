@@ -1,0 +1,10 @@
+/* pages/mine/card/choose/index.wxss */
+.choose-top{
+    position: fixed;
+    width: 100%;
+    background: #999;
+    height: 1px;
+}
+.choose-info{
+    padding: 20rpx 40rpx 0 40rpx;
+}

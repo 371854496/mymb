@@ -1,0 +1,29 @@
+<!--components/scoreList/component.wxml-->
+<view class='scorelist'>
+    <block wx:for="{{scoreList}}" wx:key="index">
+        <view class='scorelist-content'>
+            <view class='scorelist-content-top'>
+                <image src="{{item.avatarurl}}"></image>
+                <text>{{item.nickname}}</text>
+                <view>
+                    <block wx:for="{{gradeArr}}" wx:for-item="gradeItem" wx:for-index="gradeIndex" wx:key="gradeIndex">
+                        <image src='{{item.rate>gradeIndex?gradeIconActive:gradeIcon}}'></image>
+                    </block>
+                </view>
+            </view>
+            <view class='scorelist-content-middle'>
+                <text>{{item.createtime}}</text>
+            </view>
+            <view class='scorelist-content-bottom'>
+                {{item.remark}}
+            </view>
+            <view class="scorelist-content-imgs" wx:if="{{item.imgList.length}}">
+                <block wx:for="{{item.imgList}}" wx:key="imgIndex" wx:for-item="imgItem" wx:for-index="imgIndex">
+                    <view>
+                        <image src="{{imgItem}}" catchtap='previewImg' data-urls='{{item.imgList}}' data-current='{{imgItem}}'></image>
+                    </view>
+                </block>
+            </view>
+        </view>
+    </block>
+</view>

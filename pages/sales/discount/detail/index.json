@@ -1,0 +1,7 @@
+{
+    "navigationBarTitleText":"夏日特惠",
+    "usingComponents": {
+        "shoplist": "/components/shopList/component",
+        "back-home":"/components/backHome/component"
+    }
+}

@@ -1,0 +1,20 @@
+/* pages/mine/score/list/index.wxss */
+.score-list-header{
+    position: fixed;
+    top: 0;
+    background: #ccc;
+    height: 1px;
+    width: 100%;
+}
+.score-list-content{
+    padding-top:1px; 
+}
+.loadmore {
+  height: 60rpx;
+  width: 100%;
+  font-size: 32rpx;
+  line-height: 60rpx;
+  background: #f0f0f0;
+  text-align: center;
+  color: #333;
+}

@@ -1,0 +1,7 @@
+/* components/backHome/component.wxss */
+.jumpindex{
+    width:96rpx;
+    height: 96rpx;
+    position: fixed;
+    right: 50rpx;
+}

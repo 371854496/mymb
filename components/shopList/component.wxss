@@ -1,0 +1,73 @@
+/* components/shopList/shopList.wxss */
+.shoplist{
+  padding: 24rpx;
+  display: flex;
+  flex-wrap:wrap;
+  justify-content:space-between;
+}
+.shoplist>view{
+  background: #fff;
+  height: 510rpx;
+  width: 340rpx;
+  position: relative;
+  border-radius:8rpx;
+  box-shadow: 0 4rpx 8rpx rgba(0,0,0,0.04); 
+  margin-bottom: 20rpx; 
+  font-size: 0;
+}
+.shoplist>view>.shop-content{
+    /* position: absolute;
+    bottom: 20rpx;
+    left: 18rpx; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 130rpx;
+    padding-left:20rpx;
+}
+.shoplist>view>view>.shop-title{
+    font-size: 28rpx;
+    line-height: 28rpx;
+    color: #222;
+    text-overflow:ellipsis; 
+    white-space:nowrap; 
+    overflow:hidden;
+}
+ /* .shop-info{
+    color:#999;
+    padding-top: 10rpx;
+    font-size: 24rpx;
+    line-height: 24rpx;
+    text-overflow:ellipsis; 
+    white-space:nowrap; 
+    overflow:hidden;
+}  */
+.shop-price{
+    padding-top:20rpx; 
+    height:32rpx;
+    font-size:0;
+}
+.shop-price>view:first-of-type{
+    display: inline-block;
+    font-size: 24rpx;
+    line-height: 24rpx;
+    color:#f33497;
+    padding-right: 10rpx;
+}
+.shop-price>view:first-of-type>text{
+    font-size: 32rpx;
+    color:#f33497;
+    line-height: 32rpx;
+}
+.shop-price>view:last-of-type{
+    display: inline-block;
+    font-size: 20rpx;
+    line-height: 20rpx;
+    color:#999;
+    text-decoration: line-through;
+}
+.shop-price>view:last-of-type>text{
+    font-size: 20rpx;
+    color:#999;
+    line-height: 20rpx;
+}

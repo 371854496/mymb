@@ -1,0 +1,71 @@
+<!--pages/sales/bargain/detail/index.wxml-->
+<wxs module="filter" src="../../../../filter/filter.wxs" />
+<import src="../../../../libs/wxParse/wxParse.wxml" />
+<view class="detail {{isIpx?'fix-iphonex-view':''}}" wx:if="{{item.item.id}}">
+    <image src="{{bargainTitleImg}}" class='detail-title'></image>
+    <view class='detail-content'>
+        <view class='detail-content-item'>
+            <image src="{{item.item.picurl}}"></image>
+            <view>
+                <view class='detail-content-item-top'>{{item.item.title}}</view>
+                <view class='detail-content-item-bottom'>
+                    <view>
+                        <text>最低砍至:</text>
+                        <text>¥{{item.itemgroupon.grouponsale}}</text>
+                    </view>
+                    <view>原价:¥{{item.item.price}}</view>
+                    
+                </view>
+            </view>
+        </view>
+        <view class='detail-content-slider'>
+            <myslider leftValue="{{item.item.price}}" rightValue="{{item.itemgroupon.grouponsale}}" activeValue="{{activeValue}}"></myslider>
+        </view>
+        <view class='detail-content-date' wx:if="{{itemStatus==1}}">
+            还剩{{filter.remainTime(remainTime)}}结束，赶紧砍价~
+        </view>
+        <view class='detail-content-pay__success' wx:if="{{itemStatus==5}}">
+            <view>恭喜你</view>
+            <view>已完成砍价</view>
+        </view>
+        <view class='detail-content-btn' wx:if="{{itemStatus!=5}}">
+            <view wx:if="{{itemStatus==0}}" catchtap='bargainBtn' class='detail-content-btn__one'>自己砍一刀</view>
+            <view wx:if="{{itemStatus==1}}"  class='detail-content-btn__two'>
+                <button open-type='share'>邀请好友</button>
+                <view catchtap='buyBtn'>提前付款</view>
+            </view>
+            <view wx:if="{{itemStatus==2}}"  class='detail-content-btn__one' catchtap='buyBtn'>立即付款</view>
+            <view wx:if="{{itemStatus==3}}"  class='detail-content-btn__one' catchtap='helpBargainBtn'>帮砍一刀</view>
+            <view wx:if="{{itemStatus==4}}"  class='detail-content-btn__one' catchtap='bargainBtn'>我也要砍一刀</view>
+            <view wx:if="{{itemStatus==6}}"  class='detail-content-btn__one' catchtap='againBuy'>前往付款</view>
+        </view>
+    </view>
+    <view class='detail-friend' wx:if="{{helpStatus}}">
+        <image src="{{friendImg}}"></image>
+        <view>
+            <block wx:for="{{friends}}" wx:key="{{index}}">
+                <view class='detail-friend-item'>
+                    <view>
+                        <image src="{{item.avatarurl}}"></image>
+                        <view>
+                            <view class='detail-friend-item-name'>{{item.nickname}}</view>
+                            <view class='detail-friend-item-date'>{{item.createtime}}</view>
+                        </view>
+                    </view>
+                    <view>帮砍{{item.weakensale}}元</view>
+                </view>
+            </block>
+        </view>
+    </view>
+    <view class='detail-info'>
+        <image src="{{infoImg}}"></image>
+        <view class='detail-info-content'>
+            <template is="wxParse" data="{{wxParseData:article.nodes}}" />
+        </view>
+    </view>
+</view>
+<view class="{{isIpx?'fix-iphonex-button':''}}"></view>
+<image class="fix-jumpindex {{isIpx?'fix-iphonex-button':''}}" src="{{jumpIndex}}" 
+catchtap='jumpIndexBtn' hidden='{{helpStatus}}'></image>
+<bargain-dialog showModal="{{bargainDialogBol}}" bindhideModal="hidebargainModal" title="恭喜您"
+    content="{{bargainDialogContent}}" price="{{bargainDialogPrice}}"></bargain-dialog>

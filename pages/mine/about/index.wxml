@@ -1,0 +1,21 @@
+<!--pages/mine/about/index.wxml-->
+<view class='about'>
+    <view class='about-header'>
+        <image src="{{sellerInfo.logo}}"></image>
+        <view>{{sellerInfo.shopname}}欢迎您</view>
+    </view>
+    <!-- <view class='about-column' catchtap='makeLocation'>
+        <view>
+            <image src="{{addrIcon}}"></image>
+            <text>门店导航</text>
+        </view>
+        <image src="{{jumpIcon}}"></image>
+    </view> -->
+    <view class='about-column' catchtap='callPhone'>
+        <view>
+            <image src="{{phoneIcon}}"></image>
+            <text>电话预约</text>
+        </view>
+        <image src="{{jumpIcon}}"></image>    
+    </view>
+</view>

@@ -1,0 +1,9 @@
+<!--pages/sales/discount/detail/index.wxml-->
+<view class='detail' wx:if="{{shopList.length}}">
+    <image src='{{discountBgImg}}'></image>
+    <view class='detail-content'>
+         <shoplist shopList="{{shopList}}" bindshopBtn="lookItem" listBgColor="#727fff"></shoplist> 
+    </view>
+    <button class='detail-btn' open-type='share'>分享好友</button>
+</view>
+<back-home wx:if="{{discountShareBol}}"></back-home>

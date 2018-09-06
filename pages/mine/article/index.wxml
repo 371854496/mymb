@@ -1,0 +1,12 @@
+<!--pages/mine/about/index.wxml-->
+<import src="../../../libs/wxParse/wxParse.wxml" />
+<view class="{{isIpx?'fix-iphonex-view':''}} about">
+    <view class="about-title">
+     {{title}}
+    </view>
+    <view class="wxParse">
+        <template is="wxParse" data="{{wxParseData:article.nodes}}" />
+    </view>
+</view>
+<view class="{{isIpx?'fix-iphonex-button':''}}">
+</view>

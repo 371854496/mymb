@@ -1,0 +1,34 @@
+<!--pages/sales/collage/friend/index.wxml-->
+<view class="friend {{isIpx?'fix-iphonex-view':''}}">
+    <view class="friend-item">
+        <image src="{{item.item.picurl}}"></image>
+        <view>
+            <view>{{item.item.title}}</view>
+            <view>
+                <text>￥</text>
+                <text>{{item.itemgroupon.grouponsale}}</text>
+                <text>￥{{item.item.marketprice}}</text>
+            </view>
+        </view>
+    </view>
+    <view class='friend-activity'>
+        <view class='friend-activity-image'>
+            <block wx:for="{{currentTeam.memberGroupons}}" wx:key="index">
+                <view>
+                    <image src="{{item.avatarurl||userDefaultImg}}"></image>
+                    <view wx:if="{{index==0}}" class='friend-activity-image__active'>团长</view>
+                </view>
+            </block>
+        </view>
+        <view>还差{{currentTeam.remarkNum}}人成团</view>
+        <view>还剩
+            <text>{{currentTime.h}}</text>时
+            <text>{{currentTime.m}}</text>分
+            <text>{{currentTime.s}}</text>秒
+        </view>
+        <view catchtap='collageSubmit'>参与活动</view>
+    </view>
+    <shoplist shopList="{{shopList}}" bindshopBtn="lookItem"></shoplist>
+</view>
+<view class="{{isIpx?'fix-iphonex-button':''}}"></view>
+<back-home></back-home>

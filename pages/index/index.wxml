@@ -1,0 +1,206 @@
+<view class="index {{registerShowModal?'index__dialog':''}}"
+    style="height:{{registerShowModal?windowHeight:''}}px">
+  <!--swiper  -->
+  <view class="swiper">
+    <myswiper height="420" swiperList="{{swiperList}}"bindtap='banTap' ></myswiper>
+  </view>
+    
+    <view class='border-seat'></view>
+    <!-- indexcategory -->
+    <view class="weui-grids" style="border:0px;">
+    <block wx:for="{{categoryRecommends}}" wx:key="id">
+      <view class="weui-grid category-item" data-id="{{item.id}}" bindtap='clickTap'>
+        <image class="category-pic" src="{{item.catepic}}" />
+        <view class="category-name" style="color:black;">{{item.catename}}</view>
+      </view>
+    </block>
+  </view>
+
+      <view class='border-seat'></view>
+       <!--免费体验 -->
+    
+    <!-- <view class='index-experience' wx:if="{{experienceId}}">
+        <view class='index-column'>
+            <view>
+                <view></view>
+                <text>体验专区</text>
+                <view></view>
+            </view>
+            <view><text space="emsp">Free Experience</text></view>
+        </view>
+        <view class='index-experience-items' catchtap='bindExperience'>
+            <image src="{{experienceBgImg}}"></image>
+        </view>
+    </view>
+    <view class='border-seat' wx:if="{{experienceId}}"></view> -->
+    <!-- 超值抢购 -->
+
+      <!-- <view class='index-experience' wx:if="{{experienceId}}">
+        <view class='index-column'>
+            <view>
+                <view></view>
+                <text>抢购专区</text>
+                <view></view>
+            </view>
+            <view><text space="emsp">Value buy</text></view>
+        </view>
+        <view class='index-experience-items' catchtap='bindExperience'>
+            <image src="/static/images/index/tu1@.png" catchtap='bindRush'></image>
+        </view>
+    </view>
+    <view class='border-seat' wx:if="{{experienceId}}"></view>
+    
+    <view class='border-seat' wx:if="{{rushId}}"></view> -->
+
+    <!--collage  -->
+    <!-- <view class='index-collage' wx:if="{{collageItems.length}}">
+      <view class='index-column'>
+            <view>
+                <view></view>
+                <text>拼团专区</text>
+                <view></view>
+            </view>
+            <view><text space="emsp">GROUP ACTIVITIES</text></view>
+        </view>
+        <view class='index-collage-items'>
+            <image src="{{collageBgImg}}"></image>
+            <view catchtap='bindCollage'  data-itemid='{{collageItems[0].itemid}}'>
+                <view>
+                    <myimg src="{{collageItems[0].picurl}}" styleImg="width:300rpx;height:300rpx;margin-top:5rpx"></myimg>
+                </view>
+                <view>{{collageItems[0].maxnum}}人团</view>
+                <view class='index-collage-items-title'>{{collageItems[0].title}}</view>
+                <view>去拼团</view>
+            </view>
+            <view catchtap='bindCollage'  data-itemid='{{collageItems[1].itemid}}'>
+                <view>
+                  <myimg src="{{collageItems[1].picurl}}" styleImg="width:300rpx;height:300rpx;margin-top:5rpx"></myimg>
+                </view>
+                <view>{{collageItems[1].maxnum}}人团</view>
+                <view class='index-collage-items-title'>{{collageItems[1].title}}</view>
+                <view>去拼团</view>
+            </view>
+        </view>
+    </view>
+    <view class='border-seat' wx:if="{{collageItems.length}}"></view> -->
+
+    <!--bargain  -->
+    <!-- <view class='index-bargin' wx:if="{{barginItems.length}}">
+        <view class='index-column'>
+            <view>
+                <view></view>
+                <text>砍价专区</text>
+                <view></view>
+            </view>
+            <view><text space="emsp">Bargaining Zone</text></view>
+        </view>
+
+        <view class='index-bargin-items'>
+            <image src="{{barginBgImg}}"></image>
+            <view class='index-bargin-items-info'>
+                <view catchtap='bindBargin'  data-itemid='{{barginItems[0].itemid}}'>
+                    <view>
+                        <myimg src="{{barginItems[0].picurl}}" styleImg="width:180rpx;height:180rpx;"></myimg>
+                    </view>
+                    <view class='index-bargin-items-content'>
+                        <view>{{barginItems[0].title}}</view>
+                       <view>
+                            <text>最低砍至:</text>
+                            <text>¥{{barginItems[0].grouponsale}}</text>
+                            <text>原价:</text>
+                            <text>¥{{barginItems[0].price}}</text>
+                        </view>
+                        <image src="{{barginBindIcon}}"></image>
+                    </view>
+                </view>
+                <view catchtap='bindBargin'  data-itemid='{{barginItems[1].itemid}}'>
+                   <view>
+                        <myimg src="{{barginItems[1].picurl}}" styleImg="width:180rpx;height:180rpx;"></myimg>
+                    </view>
+                    <view class='index-bargin-items-content'>
+                        <view>{{barginItems[1].title}}</view>
+                       <view>
+                            <text>最低砍至:</text>
+                            <text>¥{{barginItems[1].grouponsale}}</text>
+                            <text>原价:</text>
+                            <text>¥{{barginItems[1].price}}</text> 
+                        </view>
+                        <image src="{{barginBindIcon}}"></image>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class='border-seat' wx:if="{{barginItems.length}}"></view> -->
+ 
+    <!--welfare  -->
+    <view class='index-welfare' wx:if="{{welfareItems.id}}">
+        <view class='index-column'>
+            <view>
+                <view></view>
+                <text>优惠卷专区</text>
+                <view></view>
+            </view>
+            <view><text space="emsp">Coupon collection</text></view>
+        </view>
+         <view class='index-welfare-items'>
+            <image src="/static/images/index/tu2@.png"></image>
+             <view class='index-welfare-items-content'>
+            <view>
+                    <image src="{{welfarePriceIcon}}"></image>
+                    <text>{{welfareItems.cutprice}}</text>
+                </view>
+                <view>
+                    <view>{{welfareItems.remark}}</view>
+                    <view class='index-welfare-items-price'>
+                        <view>
+                            <text>¥</text>
+                            <text>{{welfareItems.minprice}}</text>
+                            <text>¥{{welfareItems.maxnum}}</text>
+                        </view>
+                        <view catchtap='bindWelfare' data-id='{{welfareItems.id}}'>领</view>
+                    </view>
+                </view>
+            </view>  
+        </view> 
+    </view>
+    <view class='border-seat' wx:if="{{welfareItems.id}}"></view>
+    <!--activity  -->
+   
+</view>
+<!-- 首页推荐   -->
+ <view class='index-column'style="text-align:center;">
+            <view>
+                <view></view>
+                <text>精选推荐</text>
+   
+                <view></view>
+            </view>
+            <view><text space="emsp">Featured Recommended</text></view>
+        </view>
+ <view class="weui-grids" style="border:0px;">
+      <block wx:for="{{itemRecommends}}" wx:key="id">
+       
+          <view class="weui-grid_border">
+            <image catchtap='itemtap'  data-item='{{item}}' class="weui-grid__product" src="{{item.picurl}}" />
+            <view class="weui-grid_font">
+              <view class="weui-grid__label" style='font-size:16px;color:black;'>{{item.title}}
+              </view>
+              <view class="product-price">RMB:{{item.price}}元</view>
+              <view class="active-nav-border"></view>
+            </view>
+          </view>
+       
+      </block>
+    </view> 
+
+<view wx:if="{{registerShowModal}}">
+    <view class="modal-mask" catchtap="hideModal" catchtouchmove="preventTouchMove"></view>
+    <view class="modal-dialog">
+        <icon type='cancel' color='#ccc' class='modal-dialog-cancal' catchtap="hideModal"></icon>
+        <view class='modal-dialog-header'>新人专享</view>
+        <view class='modal-dialog-content' style="max-height:{{windowHeight-200}}px">
+            <card-list cardList="{{cardList}}" activeBgColor="#ffc436"></card-list>
+        </view>
+    </view>
+</view>

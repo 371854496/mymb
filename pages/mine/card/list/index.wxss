@@ -1,0 +1,31 @@
+/* pages/mine/card/list/index.wxss */
+.card{
+    font-size: 28rpx;
+    color:#222;
+}
+.card-nav{
+    height: 88rpx;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-top: 1px solid #e3e3ed;
+    border-bottom: 1px solid #e3e3ed;
+    position: fixed;
+    top: 0; 
+    z-index: 1000;  
+    background:#fff;
+}
+.card-nav>view{
+    width: 140rpx;
+    height: 88rpx;
+    text-align: center;
+    line-height: 88rpx;
+}
+.active-nav{
+    color:#f33497;
+    border-bottom: 1px solid #f33497;
+}
+.card-info{
+    padding: 124rpx 40rpx 0 40rpx;
+}

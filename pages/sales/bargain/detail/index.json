@@ -1,0 +1,7 @@
+{
+    "navigationBarTitleText":"砍价详情",
+    "usingComponents":{
+        "myslider":"/components/mySlider/component",
+        "bargain-dialog": "/components/bargainDialog/component"
+    }
+}

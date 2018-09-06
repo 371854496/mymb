@@ -1,0 +1,109 @@
+/* pages/mine/score/index.wxss */
+.score{
+    background: #f5f5f5;
+    color:#999;
+    font-size: 32rpx;
+    padding-top: 20rpx;
+}
+.score-item{
+    background: #fff;
+    padding-left: 32rpx;
+}
+.score-item-info{
+    display: flex;
+    min-height: 160rpx;
+    padding-top: 32rpx;
+    padding-bottom: 48rpx;
+    padding-right: 32rpx;
+}
+.score-item-info>image{
+    width: 160rpx;
+    height: 160rpx;
+    border-radius: 10rpx;
+    margin-right: 26rpx;
+}
+.score-item-info-content{
+    width: calc(100% - 186rpx);
+    font-size: 28rpx;
+}
+.score-item-info-content>view:first-of-type{
+    color:#333;
+    line-height: 32rpx;
+    margin-bottom: 14rpx;
+}
+/*评分  */
+.score-item-grade{
+    padding-bottom:48rpx; 
+}
+.score-item-grade>text:first-of-type{
+    color:#333;
+    vertical-align: middle;
+    padding-right: 20rpx;
+}
+.score-item-grade-star{
+    display: inline-block;
+    font-size: 0;
+    vertical-align: middle;
+}
+.score-item-grade>text:last-of-type{
+    vertical-align: middle;
+}
+.score-item-grade-star>image{
+    width: 48rpx;
+    height: 48rpx;
+    margin-right: 20rpx;
+}
+.score-item-text{
+    padding-right: 32rpx;
+}
+.score-item-text>textarea{
+    width: 100%;
+}
+.score-item-pic{
+    padding-bottom: 22rpx;
+    padding-right: 32rpx;
+    font-size: 0;
+    border-bottom: 4rpx solid #f5f5f5;
+}
+.score-item-pic__list{
+    display: inline-block;
+    width: 25%;
+    margin-bottom: 10rpx;
+    text-align: left;  
+}
+.score-item-pic__list>image{ 
+    width: 152rpx;
+    height: 152rpx;
+    border: 1px dashed #ccc;
+    position: relative;
+}
+.score-item-pic__list>.score-item-pic__del{
+    position: absolute;
+    top: 2rpx;
+    right: 2rpx;
+    width: 20rpx;
+    height: 4rpx;
+    background: red;
+}
+.score-item-pic__list>.score-item-pic__add{
+    border: none;
+}
+/*底部  */
+.score-footer{
+    background: #fff;
+    height: 120rpx;
+    border-bottom: 4rpx solid #f5f5f5; 
+    text-align: right;
+    font-size: 32rpx;
+    line-height: 120rpx;
+    padding-right: 32rpx;
+}
+.score-footer-submit{
+    display: inline-block;
+    width: 172rpx;
+    height: 60rpx;
+    text-align: center;
+    line-height: 60rpx;
+    color:#e2b458; 
+    border: 1px solid #e2b458; 
+}

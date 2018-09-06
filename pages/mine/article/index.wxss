@@ -1,0 +1,26 @@
+@import "/wxParse/wxParse.wxss";
+
+page{
+    background-color: #FFFFFF;
+}
+image{
+    margin: 4px 0;
+}
+.article-title{
+  color:#82501e;
+  width: 100%;
+  background-color: white;
+  font-size:36px;
+  text-align: center;
+}
+.article-content
+{
+  width:100%;
+  background-color: white;
+  line-height:30px;
+}
+.about-title{
+   width: 100%;
+text-align: center;
+
+}

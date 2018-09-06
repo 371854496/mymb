@@ -1,0 +1,33 @@
+/* components/itemNav/component.wxss */
+.nav{
+  white-space: nowrap;
+  color: #999; 
+  background: #fff;
+  width: 750rpx;
+}
+.nav-title{
+  display: inline-block; 
+  padding-top: 20rpx;
+  text-align: center;
+  vertical-align: top;
+  font-size: 28rpx;
+}
+.nav-title:first-of-type{
+   padding-left: 40rpx; 
+}
+.nav-title+.nav-title{
+    padding-left: 60rpx;
+}
+.active-nav-font{
+  vertical-align: top;
+  line-height: 34rpx;
+  color: #f33497;
+  font-size: 40rpx;
+}
+.active-nav-border{
+  margin:18rpx auto; 
+  width: 60rpx;
+  height: 4rpx;
+  background: #f33497;
+}
+

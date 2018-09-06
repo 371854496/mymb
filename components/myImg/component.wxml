@@ -1,0 +1,3 @@
+<!--components/imgload/component.wxml-->
+<image src='{{bol?src:defalutImg}}' mode="{{mode}}" lazy-load="{{lazyLoad}}" 
+bindload="imgLoad" binderror="imgError" style="{{styleImg}}"></image>

@@ -1,0 +1,11 @@
+<!--pages/mine/score/list/index.wxml-->
+<view class='score-list-header'></view>
+<view class="{{isIpx?'fix-iphonex-view':''}}">
+    <scorelist class="score-list-content" scoreList="{{scoreList}}"></scorelist>
+    <view class="loadmore" hidden="{{!pullBol}}">
+        <text hidden="{{!nomore}}">{{nomoreText}}</text>
+        <text hidden="{{nomore}}"> {{loadmoreText}}</text>
+    </view>
+</view>
+<view class="{{isIpx?'fix-iphonex-button':''}}" hidden='{{collectEditBol}}'>
+</view>

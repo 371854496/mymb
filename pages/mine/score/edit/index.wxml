@@ -1,0 +1,42 @@
+<!--pages/mine/score/index.wxml-->
+<view class='score'>
+    <block wx:for="{{itemList}}" wx:key="scoreIndex" wx:for-item="scoreItem" wx:for-index="scoreIndex">
+        <view class='score-item'>
+            <view class='score-item-info'>
+                <image src="{{scoreItem.itempic}}"></image>
+                <view class='score-item-info-content'>
+                    <view>{{scoreItem.title}}</view>
+                </view>
+            </view>
+            <view class='score-item-grade'>
+                <text>评分</text>
+                <view class='score-item-grade-star'>
+                    <block wx:for="{{gradeArr}}" wx:for-index="gradeIndex" wx:key="gradeIndex">
+                        <image src='{{scoreItem.rate>gradeIndex?gradeIconActive:gradeIcon}}' catchtap='gradeBtn' data-index='{{gradeIndex}}' data-pindex='{{scoreIndex}}'></image>
+                    </block>
+                </view>
+                <text>{{gradeArr[scoreItem.rate-1]}}</text>
+            </view>
+            <view class='score-item-text'>
+                <textarea placeholder="填写评价，说说它的优点把" bindblur="textBlur" data-index='{{scoreIndex}}'></textarea>
+            </view>
+            <view class='score-item-pic'>
+                <block wx:for="{{scoreItem.imgList}}" wx:key="index" wx:for-item="imgItem" wx:for-index="imgIndex">
+                    <view class='score-item-pic__list'>
+                        <image src="{{imgItem}}" catchtap='bindImg' data-img='{{imgItem}}' data-index='{{imgIndex}}'
+                            data-pindex='{{scoreIndex}}'>
+                            <text class='score-item-pic__del'></text>
+                        </image>
+                    </view>
+                </block>
+                <view class='score-item-pic__list' hidden='{{scoreItem.imgList.length>=4}}'>
+                    <image src="{{takePicIcon}}" catchtap='takePic' data-index='{{scoreIndex}}'
+                    class='score-item-pic__add'></image>
+                </view>
+            </view>
+        </view>
+    </block>
+    <view class='score-footer'>
+        <view class='score-footer-submit' catchtap='scoreSumit'>提交</view>
+    </view>
+</view>

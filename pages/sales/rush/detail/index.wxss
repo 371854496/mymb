@@ -1,0 +1,24 @@
+/* pages/sales/rush/detail/index.wxss */
+.detail{
+    background: #fff;
+    padding: 0 30rpx;
+}
+.detail-btn{
+    width: 674rpx;
+    height:666rpx;
+}
+.ljbtn{
+  width:540rpx;
+height:80rpx;
+text-align:center;
+line-height:80rpx;
+color:#222;
+background-image:linear-gradient(0deg, #efb427 0%, #fdfc35 100%), linear-gradient( #f9db36, #f9db36);
+box-shadow:0rpx 4rpx 20rpx 0rpx rgba(186, 42, 200, 0.36);
+border-radius:12rpx;
+margin-left:70rpx;
+margin-top:40rpx;
+}
+.detail-info{
+  margin-bottom: 40rpx;
+}

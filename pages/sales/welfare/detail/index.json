@@ -1,0 +1,7 @@
+{
+    "navigationBarTitleText":"优惠卷领取",
+    "usingComponents":{
+        "bargain-dialog":"/components/bargainDialog/component",
+        "back-home": "/components/backHome/component"
+    }
+}

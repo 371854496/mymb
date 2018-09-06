@@ -1,0 +1,101 @@
+<!--pages/sales/collage/detail/index.wxml-->
+<wxs module="filter" src="../../../../filter/filter.wxs" />
+<import src="../../../../libs/wxParse/wxParse.wxml" />
+<view class="detail {{isIpx?'fix-iphonex-view':''}}" wx:if="{{item.item.id}}">
+    <swiper indicator-dots="true" autoplay="true" class='detail-swiper' indicator-color="rgba(235,235,240,0.5)" indicator-active-color="#fff" wx:if="{{item.itempicture.length}}">
+        <block wx:for="{{item.itempicture}}" wx:key="index" wx:for-item="attr">
+            <swiper-item class="detail-swiper-image">
+                <!-- <image src="{{attr}}" /> -->
+                <myimg src="{{attr}}" styleImg="height:480rpx;width: 100%;display:block"></myimg>
+            </swiper-item>
+        </block>
+    </swiper>
+    <view wx:if="{{item.itempicture.length==0}}">
+         <myimg src='{{item.item.picurl}}' styleImg="height:480rpx;width: 100%;display:block"></myimg>
+    </view>
+    <view class="detail-title">
+        <view class='detail-title-left'>
+            <view>{{item.item.title}}</view>
+            <view class='detail-title-price'>
+                <view>拼团价</view>
+                <view>
+                    <text>¥</text>
+                    <text>{{item.itemgroupon.grouponsale}}</text>
+                </view>
+                <text>¥{{item.item.marketprice}}</text>
+            </view>
+            <view class='detail-title-date'>截止时间:{{item.itemgroupon.endtime}}</view>
+        </view>
+        <view class='detail-title-right'>
+            <button open-type='share' plain="true" class='hide-btn' data-type='1'>
+                <image src="{{shareIcon}}"></image>
+            </button>
+            <view>已拼成人数</view>
+            <view>{{item.itemgroupon.successordernum}}</view>
+        </view>
+    </view>
+    <view class='detail-content' wx:if="{{colloageInfo.data.length>0}}">
+        <view class='detail-content-title' catchtap='lookMore'>
+            <text>{{colloageInfo.totalcount}}人在拼团，可直接参与</text>
+            <view>
+                <text>{{moreBol?'收起':'查看更多'}}</text>
+                <image src="{{moreIcon}}" class="{{moreBol?'detail-content-list__more':''}}"></image>
+            </view>
+        </view>
+        <view class='detail-content-list'>
+            <block wx:for="{{colloageInfo.data}}" wx:key="index">
+                <view wx:if="{{(index<2||moreBol)&&item.remainTime>0}}" class="detail-content-item">
+                    <view class='detail-content-item-left'>
+                        <image src="{{item.avatarurl}}"></image>
+                        <text>{{item.nickname}}</text>
+                    </view>
+                    <view class='detail-content-item-right'>
+                        <view>
+                            <view>
+                                还差
+                                <text class='detail-content-item__num'>{{titleType-item.totalordernum}}人</text>拼成
+                            </view>
+                            <view>
+                                剩余{{filter.remainTime(item.remainTime)}}
+                            </view>
+                        </view>
+                        <view catchtap='collageSubmit'  data-id='{{item.id}}'>去拼团</view>
+                    </view>
+                </view>
+            </block>
+        </view>
+    </view>
+    <view class='detail-info'>
+        <view class='detail-info-title'>拼团规则</view>
+        <view class='detail-info-content'>
+            <template is="wxParse" data="{{wxParseData:article.nodes}}" />
+        </view>
+    </view>
+</view>
+<view class="detail-btn {{isIpx?'fix-iphonex-button':''}}" catchtap='collageSubmit' data-type="1">
+    <view>¥{{item.itemgroupon.grouponsale}}</view>
+    <view>发起开团</view>
+</view>
+<view class="commodity-screen" bindtap="hideModal" hidden="{{hideModalStatus}}"></view>
+<!--弹出框  -->
+<view animation="{{animationData}}" class="commodity-box" hidden="{{hideModalStatus}}">
+    <view class='commodity-box-top'>
+        <view>还差{{currentTeam.remarkNum}}人成团</view>
+        <view>分享到3个群后，成团率高达98%</view>
+        <view>
+            还剩
+            <text>{{currentTime.h}}</text>时
+            <text>{{currentTime.m}}</text>分
+            <text>{{currentTime.s}}</text>秒
+        </view>
+        <button open-type='share'>邀请好友参团</button>
+    </view>
+    <view class='commodity-box-image'>
+        <block wx:for="{{currentTeam.memberGroupons}}" wx:key="index">
+            <view>
+                <image src="{{item.avatarurl||userDefaultImg}}"></image>
+                <view wx:if="{{index==0}}" class='commodity-box-image__active'>团长</view>
+            </view>
+        </block>
+    </view>
+</view>

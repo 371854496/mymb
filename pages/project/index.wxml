@@ -1,0 +1,12 @@
+<!--pages/project/index.wxml-->
+<view class='project'>
+    <itemnav navArr="{{navTitleArr}}" class="project-header" bind:changeNav="navBtn" curId='{{currCateId}}'></itemnav>
+    <view class="project-content">
+        <shoplist shopList="{{shopList}}" bindshopBtn="lookItem"></shoplist> 
+    </view>
+</view>
+<emty wx:if="{{shopList.length==0}}" emtyText="暂无商品"></emty>
+<view class="loadmore" hidden="{{!pullBol}}">
+    <text hidden="{{!nomore}}">{{nomoreText}}</text>
+    <text hidden="{{nomore}}"> {{loadmoreText}}</text>
+</view>

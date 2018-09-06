@@ -1,0 +1,67 @@
+<!--pages/order/submit/index.wxml-->
+<wxs module="filter" src="../../../filter/filter.wxs"/>
+<form bindsubmit="formSubmit">
+    <view class="submit {{isIpx?'fix-iphonex-view':''}}">
+        <view class='submit-list'>
+            <view>
+                <text>姓名</text>
+                <input type='text' placeholder="请输入姓名" name="realname" value='{{realname}}'></input>
+            </view>
+            <view>
+                <text>联系方式</text>
+                <input type='number' maxlength='11' placeholder="请输入手机号" name="mobile"></input>
+            </view>
+            <view>
+                <text>预约日期</text>
+                <picker mode="date" name="date" bindchange="changeDate" start="{{dateStart}}">
+                    <text>{{date}}</text>
+                </picker>
+            </view>
+            <view>
+                <text>预约时间</text>
+                <picker mode="time" name="time" bindchange="changeTime">
+                    <text>{{time}}</text>
+                </picker>
+            </view>
+            <view catchtap='chooseCard' wx:if="{{item.itemmodel==1}}">
+                <text>优惠券/体验券/抵用券</text>
+                <view>
+                    <text class="{{filter.isCardPrompt(cardPromptType)}}">{{cardPrompt}}</text>
+                    <image src="{{jumpIcon}}"></image>
+                </view>
+            </view>
+        </view>
+        <view class='submit-textarea'>
+            <view>留言</view>
+            <textarea name="remark"></textarea>
+        </view>
+        <view class='submit-item'>
+            <image src="{{item.picurl}}" catchtap='backItem'></image>
+            <view>
+                <view>{{item.title}}</view>
+                <view>
+                    <view class='submit-item-price'>
+                        <text>¥</text>
+                        <text>{{item.price}}</text>
+                    </view>
+                    <view class='submit-item-num' wx:if="{{item.itemmodel==1}}">
+                        <view catchtap='bindMinusTab'>
+                            <view>-</view>
+                        </view>
+                        <view>
+                            <input type='number' bindblur='bindBuyNumInput' name="num" value='{{buynum}}'></input>
+                        </view>
+                        <view catchtap='bindPlusTab'>
+                            <view>+</view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+
+        </view>
+    </view>
+    <button formType="submit" class="submit-btn {{isIpx?'fix-iphonex-button':''}}">
+        <view>¥{{amount}}</view>
+        <view>立即支付</view>
+    </button>
+</form>
